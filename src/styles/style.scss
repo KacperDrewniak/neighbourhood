@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500,700,900&display=swap');
+
+$font-family: 'Roboto', sans-serif;
+
+
+* {
+  font-family: $font-family;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  box-shadow: 25px 31px 54px 14px rgba(0, 0, 0, 0.75);
+  margin: 0 auto -100px;
+  background-color: white;
+  width: 1440px;
+  text-align: center;
+  padding: 20px 0;
+
+  img {
+    width: 50%
+  }
+}
+
+.header {
+  background: url("https://cdn.pixabay.com/photo/2014/08/26/15/22/fruit-428057_960_720.jpg") no-repeat;
+  background-size: cover;
+  height: 80vh;
+  margin-top: 50px
+
+}
+
+.dark {
+  height: 80vh;
+  width: 1440px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, .7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 4rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+main {
+  padding-top: 100px;
+  width: 1440px;
+  margin: -50px auto;
+  background-color: white;
+  box-shadow: 25px 31px 54px 14px rgba(0, 0, 0, 0.75);
+}
+
+.table-vegetables {
+  margin: 100px 0;
+  font-size: 20px;
+  width: 100%;
+}
+
+.plus, .minus {
+  cursor: pointer;
+  padding: 5px;
+  transition: 1s;
+
+  &:hover {
+    background-color: #ff0000;
+  }
+}
+
+.plus {
+  &:hover {
+    background-color: #00aff0 !important;
+  }
+}
+
+.form {
+  text-align: center;
+  width: 80%
+}
+
+.footer {
+  padding: 20px;
+  background-color: black;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+
+  ul li {
+    padding: 10px;
+    font-size: 30px;
+  }
+}
+
+th {
+  transition: .3s;
+
+  &:hover {
+    background-color: #4e555b;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.Tp-heading1 {
+  text-align: center;
+}
+
+@media (max-width: 1440px) {
+  main, .header, .logo, .dark {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1220px) {
+
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .table-vegetables {
+    font-size: 16px;
+  }
+  .footer {
+    font-size: 1.2rem;
+  }
+  .form{
+    width:100%;
+  }
+}
+
+@media(max-width: 720px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+}
