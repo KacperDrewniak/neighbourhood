@@ -50,12 +50,10 @@ const OrderTable = () => {
             }
             return v
         });
-        setVegetables(_vegetables)
+
     }
 
-    const sumAll = ()=>{
-        return 0;
-    }
+    const sumAll = (vegetables[0].count * vegetables[0].price) + (vegetables[1].count * vegetables[1].price);
 
     return (
         <>
