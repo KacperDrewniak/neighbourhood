@@ -41,7 +41,8 @@ function AboutUs() {
         <Banner>
             <ContentOfBanner>
                 <Image/>
-                <Text>Coś o nas...</Text>
+                <Text>Jesteśmy firmą z 30 letnią tradycją, oferujemy wysokiej jakości naturalne produkty. W ostatnim
+                    czasie postanowiliśmy przenieść część naszej sprzedaży do internetu.</Text>
             </ContentOfBanner>
         </Banner>
     )

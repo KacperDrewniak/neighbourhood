@@ -34,7 +34,7 @@ class Contact extends Component {
         let templateParams = {
             name: name,
             from_name: email,
-            to_name: 'drewniakkacper6@gmail.com',
+            to_name: 'warzywnybaron@gmail.com',
             subject: subject,
             message_html: message,
             vegetables: text,
@@ -43,9 +43,9 @@ class Contact extends Component {
         }
         emailjs.send(
             'gmail',
-            'template_Q72kYtHi',
+            'template_gi4v6dt3',
             templateParams,
-            'user_A9UIp2HBonBA5XglnYdAE'
+            'user_akoDeoUXzQ1rLnHDYzS4Q'
         )
 
         this.resetForm()
