@@ -34,7 +34,7 @@ const OrderTable = () => {
         },
         {
             id: 3,
-            name:  "Marchewka (myta)",
+            name: "Marchewka (myta)",
             price: 1.6,
             count: 0,
             unit: "kg"
@@ -172,53 +172,57 @@ const OrderTable = () => {
         + (vegetables[15].count * vegetables[15].price)
     ;
 
+    const decimal = function (n, k = 1) {
+        const factor = Math.pow(10, k + 1);
+        n = Math.round(Math.round(n * factor) / 10);
+        return n / (factor / 10);
+    }
+
+
     return (
         <>
-            <Row>
-                <Col>
-                    <Table dark className="table-vegetables">
-                        <thead>
+
+            <Table dark className="table-vegetables">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Warzywo</th>
+                    <th>Cena</th>
+                    <th>Ilość</th>
+                    <th>Jednostka</th>
+                    <th></th>
+                    <th></th>
+                    <th>Suma</th>
+                </tr>
+                </thead>
+                <tbody>
+                {vegetables.map((vegetable, index) => {
+                    return (
                         <tr>
-                            <th>#</th>
-                            <th>Warzywo</th>
-                            <th>Cena</th>
-                            <th>Ilość</th>
-                            <th>Jednostka</th>
-                            <th></th>
-                            <th></th>
-                            <th>Suma</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {vegetables.map((vegetable, index) => {
-                            return (
-                                <tr>
-                                    <th>{index + 1}</th>
-                                    <th>{vegetable.name}</th>
-                                    <th>{vegetable.price} zł</th>
-                                    <th>{vegetable.count}</th>
-                                    <th>{vegetable.unit}</th>
-                                    <th onClick={() => handleAdd(index)}
-                                        className="plus">+
-                                    </th>
-                                    <th onClick={() => handleSubstract(index)} className="minus">-</th>
-                                    <th>{vegetable.count * vegetable.price} zł</th>
-                                </tr>
-                            )
-                        })}
-                        <tr>
-                            <th colspan="5">suma</th>
-                            <th>
-                                {sumAll}
+                            <th>{index + 1}</th>
+                            <th>{vegetable.name}</th>
+                            <th>{decimal(vegetable.price)} zł</th>
+                            <th>{decimal(vegetable.count)}</th>
+                            <th>{vegetable.unit}</th>
+                            <th onClick={() => handleAdd(index)}
+                                className="plus">+
                             </th>
+                            <th onClick={() => handleSubstract(index)} className="minus">-</th>
+                            <th>{decimal(vegetable.count * vegetable.price)} zł</th>
                         </tr>
-                        </tbody>
-                    </Table>
-                </Col>
-            </Row>
-            <Row>
-                <Contact vegetables={vegetables}/>
-            </Row>
+                    )
+                })}
+                <tr>
+                    <th colspan="5">suma</th>
+                    <th>
+                        {decimal(sumAll)} zł
+                    </th>
+                </tr>
+                </tbody>
+            </Table>
+
+            <Contact vegetables={vegetables}/>
+
         </>
     )
 
