@@ -1,12 +1,26 @@
-import React, {useState} from 'react';
-import {Col, Row, Table} from "reactstrap"
+import React, {useEffect, useState} from 'react';
+import {Table} from "reactstrap"
 import Contact from "./Contact"
+import gql from 'graphql-tag';
 
 const OrderTable = () => {
 
 
     const [visible, setVisible] = useState(true);
     const onDismiss = () => setVisible(false);
+
+    const [data,setData] = useState([])
+
+    useEffect(()=>{
+        fetch('https://api-eu-central-1.graphcms.com/v2/ckbezx6yk2ha401xy9iiadpxh/master', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: '{ warzywos {  price } }' }),
+        })
+            .then(res => res.json())
+            .then(res => setData(res.data));
+
+    },[])
 
     const [vegetables, setVegetables] = useState([
         {
@@ -154,22 +168,24 @@ const OrderTable = () => {
 
     }
 
-    const sumAll = (vegetables[0].count * vegetables[0].price)
-        + (vegetables[1].count * vegetables[1].price)
-        + (vegetables[2].count * vegetables[2].price)
-        + (vegetables[3].count * vegetables[3].price)
-        + (vegetables[4].count * vegetables[4].price)
-        + (vegetables[5].count * vegetables[5].price)
-        + (vegetables[6].count * vegetables[6].price)
-        + (vegetables[7].count * vegetables[7].price)
-        + (vegetables[8].count * vegetables[8].price)
-        + (vegetables[9].count * vegetables[9].price)
-        + (vegetables[10].count * vegetables[10].price)
-        + (vegetables[11].count * vegetables[11].price)
-        + (vegetables[12].count * vegetables[12].price)
-        + (vegetables[13].count * vegetables[13].price)
-        + (vegetables[14].count * vegetables[14].price)
-        + (vegetables[15].count * vegetables[15].price)
+    console.log(data);
+
+    const sumAll = (vegetables[0].count * data[0])
+        + (vegetables[1].count * data[1])
+        + (vegetables[2].count * data[2])
+        + (vegetables[3].count * data[3])
+        + (vegetables[4].count * data[4])
+        + (vegetables[5].count * data[5])
+        + (vegetables[6].count * data[6])
+        + (vegetables[7].count * data[7])
+        + (vegetables[8].count * data[8])
+        + (vegetables[9].count * data[9])
+        + (vegetables[10].count * data[10])
+        + (vegetables[11].count * data[11])
+        + (vegetables[12].count * data[12])
+        + (vegetables[13].count * data[13])
+        + (vegetables[14].count * data[14])
+        + (vegetables[15].count * data[15])
     ;
 
     const decimal = function (n, k = 1) {
