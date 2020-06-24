@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import * as emailjs from 'emailjs-com'
 import {Button, Col, Container, Form, FormGroup, Input, Label, Row} from 'reactstrap'
-
+import emailjs from 'emailjs-com';
 class Contact extends Component {
 
 
@@ -14,6 +13,16 @@ class Contact extends Component {
         text: ''
     }
 
+
+
+
+    decimal(n, k = 1) {
+        const factor = Math.pow(10, k + 1);
+        n = Math.round(Math.round(n * factor) / 10);
+        return n / (factor / 10);
+    }
+
+
     handleSubmit(e) {
         e.preventDefault()
         const {name, email, subject, message, context} = this.state
@@ -21,12 +30,12 @@ class Contact extends Component {
         const arr = [name, email, subject, message, context]
 
         let text = ""
-        this.props.vegetables.forEach(vegetable => text += `warzywo ${vegetable.name} ,  ilość : ${vegetable.count}`)
-        console.log(this.props.vegetables)
+        this.props.vegetables.forEach((vegetable, i) => text += `warzywo ${vegetable.title} ,  ilość : ${vegetable.count}`)
+        console.log(text)
 
-        arr.forEach((a,i) => {
+        arr.forEach((a, i) => {
 
-            if(a===""){
+            if (a === "") {
                 alert(`proszę uzupełnić dane`)
             }
         })
@@ -66,6 +75,10 @@ class Contact extends Component {
     }
 
     render() {
+
+
+        console.log(this.props)
+
         return (
             <Container className="form" fluid>
                 <Row>
