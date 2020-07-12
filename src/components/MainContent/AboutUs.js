@@ -26,14 +26,15 @@ const Image = styled.div`
 `
 
 const Text = styled.div`
-           position:relative;
+            display:flex;
            z-index:100;
            color:white;
            text-align:left;
            width:100%;
-           padding:5px;
+           padding:20px;
            background-color:#212529;
 `
+
 
 
 function AboutUs() {
@@ -41,8 +42,8 @@ function AboutUs() {
         <Banner>
             <ContentOfBanner>
                 <Image/>
-                <Text>Jesteśmy firmą z 30 letnią tradycją, oferujemy wysokiej jakości naturalne produkty. W ostatnim
-                    czasie postanowiliśmy przenieść część naszej sprzedaży do internetu.</Text>
+                <Text><p style={{display:'inline-block',margin:"auto"}}>Jesteśmy firmą z 30 letnią tradycją, oferujemy wysokiej jakości naturalne produkty. W ostatnim
+                    czasie postanowiliśmy przenieść część naszej sprzedaży do internetu.</p></Text>
             </ContentOfBanner>
         </Banner>
     )

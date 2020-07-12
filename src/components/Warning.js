@@ -13,11 +13,9 @@ const Warning = () => {
         <>
             <Warn>
                 <h1>Uwaga!</h1>
-                <p>Darmowa dostawa na terenie Bielska-Białej od zamówienia o wartości 150zł.</p>
+                <p>Darmowa dostawa na terenie Bielska-Białej od zamówienia o wartości 50zł.</p>
             </Warn>
-            <Warn>
-                <h1>W razie chęci negocjaji prosimy o kontakt mailowy</h1>
-            </Warn>
+
         </>
     )
 }

@@ -111,6 +111,9 @@ const OrderTable = () => {
         const _vegetables = vegetables.map(v => {
             if (title == v.title) {
                 v.count = v.count - 1;
+                if(v.count === -1 ){
+                    v.count = v.count + 1;
+                }
             }
             return v
         });
@@ -140,10 +143,6 @@ const OrderTable = () => {
         + decimal(vegetables[10].count * vegetables[10].price)
         + decimal(vegetables[11].count * vegetables[11].price)
         + decimal(vegetables[12].count * vegetables[12].price)
-        + decimal(vegetables[13].count * vegetables[13].price)
-        + decimal(vegetables[14].count * vegetables[14].price)
-        + decimal(vegetables[15].count * vegetables[15].price)
-
     ;
 
     console.log(sumAll)
@@ -191,7 +190,7 @@ const OrderTable = () => {
                     </tr>
                     </tbody>
                 </Table>
-                <Contact vegetables={vegetables} />
+                <Contact vegetables={vegetables}/>
             </>
             }
         </>
