@@ -17,7 +17,7 @@
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
     "availity-reactstrap-validation": "^2.6.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "emailjs": "^2.2.0",
     "graphql": "^15.1.0",
     "graphql-tag": "^2.10.3",
