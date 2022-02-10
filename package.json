@@ -21,7 +21,7 @@
     "emailjs": "^2.2.0",
     "graphql": "^15.1.0",
     "graphql-tag": "^2.10.3",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
